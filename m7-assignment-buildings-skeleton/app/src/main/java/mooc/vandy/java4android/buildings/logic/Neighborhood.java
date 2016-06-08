@@ -12,7 +12,6 @@ import mooc.vandy.java4android.buildings.ui.OutputInterface;
  */
 public final class Neighborhood {
 
-    // TODO - Put your code here.
     public static void print(Building[]buildings, String header, OutputInterface out) {
         out.println(header);
         for (Building building : buildings) {

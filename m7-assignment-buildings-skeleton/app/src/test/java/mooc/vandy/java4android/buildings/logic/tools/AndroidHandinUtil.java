@@ -5,6 +5,10 @@ import android.util.Log;
 import org.apache.commons.lang3.text.WordUtils;
 
 import java.io.File;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+import java.io.PrintWriter;
 
 import io.magnum.autograder.junit.ConsoleFormatter;
 import io.magnum.autograder.junit.JUnitEvaluation;
@@ -32,6 +36,10 @@ public class AndroidHandinUtil {
         Log.d("MyMsg", WordUtils.wrap("Your estimated score is: " + estimatedScore.getScore() + "/" + estimatedScore.getTotalPoints(), 80));
         Log.d("MyMsg", WordUtils.wrap("(This is not your actual grade for the assignment, just an estimate. Why? The actual grade"
                 + " is only calculated after submission to Coursera.\n\n", 80));
+//        System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
         System.out.println(estimatedScore.getFeedback());
+        PrintWriter writer = new PrintWriter(prjroot,"UTF-8");
+        writer.print(estimatedScore.getFeedback());
+        writer.close();
     }
 }

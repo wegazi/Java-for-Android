@@ -40,11 +40,9 @@ public class House
        }
 
 
-       public String getOwner() {
-              return mOwner;
-       }
+       public String getOwner() {return mOwner; }
 
-       public void setmOwner(String mOwner) {
+       public void setOwner(String mOwner) {
               this.mOwner = mOwner;
        }
 

@@ -6,7 +6,6 @@ package mooc.vandy.java4android.buildings.logic;
 public class Building {
     
     // TODO - Put your code here.
-    private int mParkingSpaces;
     private int mLength;
     private int mWidth;
     private int mLotLength;
@@ -19,6 +18,7 @@ public class Building {
         this.mLotLength = lotLength;
         this.mLotWidth = lotWidth;
     }
+
 
     public int getLength() {
         return mLength;
@@ -44,21 +44,9 @@ public class Building {
         this.mLotLength = mLotLength;
     }
 
-    public int getLotWidth() {
-        return mLotWidth;
-    }
+    public int getLotWidth() { return mLotWidth; }
 
-    public void setLotWidth(int mLotWidth) {
-        this.mLotWidth = mLotWidth;
-    }
-
-    public void setParkingSpaces(int spaces) {
-        this.mParkingSpaces = spaces;
-    }
-
-    public int getParkingSpaces() {
-        return mParkingSpaces;
-    }
+    public void setLotWidth(int mLotWidth) { this.mLotWidth = mLotWidth; }
 
     public int calcBuildingArea() {
         return mLength * mWidth;
@@ -72,4 +60,5 @@ public class Building {
         String message = "";
         return message;
     }
+    
 }

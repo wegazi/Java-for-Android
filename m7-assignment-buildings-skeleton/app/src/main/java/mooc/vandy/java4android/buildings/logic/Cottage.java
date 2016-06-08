@@ -6,7 +6,7 @@ package mooc.vandy.java4android.buildings.logic;
 public class Cottage 
        extends House {
        
-    // TODO - Put your code here.
+       // TODO - Put your code here.
        private boolean mSecondFloor;
 
        Cottage(int dimension, int lotLength, int lotWidth) {
@@ -29,6 +29,5 @@ public class Cottage
               }
               return message;
        }
-    
 }
 

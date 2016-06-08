@@ -19,7 +19,7 @@ public class AutoGrader {
     @Test
     public void mainTest(){
         try {
-            AndroidHandinUtil.generateHandinPackage("Asgn2", new File("./"),
+            AndroidHandinUtil.generateHandinPackage("Asgn2", new File("./build/results.txt"),
                     LogicUnitTests.class);
         }catch(Exception e){
             Log.d("AutoGrader :", e.getMessage());

@@ -102,6 +102,7 @@ public class Logic implements LogicInterface {
         // System.out.println("In found match with seed " + seed);
         Random random = new Random(seed);
         boolean[] birthdays = new boolean[365];
+        
 
         for (int j = 0; j < size; j++) { // size of sample
             int n = random.nextInt(365);

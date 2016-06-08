@@ -1,7 +1,14 @@
 package mooc.vandy.java4android.buildings.logic;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.ByteArrayOutputStream;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+
 import io.magnum.autograder.junit.Rubric;
 import mooc.vandy.java4android.buildings.logic.tools.TestingOutputInterface;
 
@@ -20,10 +27,42 @@ public class LogicUnitTests {
     // Keeps track of Office#totalOffices static member.
     private static int mExpectedTotalOffices;
 
+    // Used to make sure "System.out" and "System.err" are NOT used in your assignments EVER!!
+    ByteArrayOutputStream myOut;
+    ByteArrayOutputStream myErr;
+
+    /**
+     * This method runs before every test method and 'sets up' the testing environment.
+     * </p>
+     * This entire class is re-created for each test method below. Therefore, 'setup'
+     * operations such as these that need to be ran 'before' each test are in this method.
+    */
     @Before
-    public void setupClasses(){
+    public void setup(){
         output = new TestingOutputInterface();
         mLogic = new Logic(output);
+        
+        System.err.flush();
+        System.out.flush();
+        myOut = new ByteArrayOutputStream();
+        myErr = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(myOut));
+        System.setErr(new PrintStream(myErr));
+    }
+
+    /**
+     * This method runs after every test method and 'tears down' the testing environment.
+     */
+    @After
+    public void tearDown(){
+        final String standardOutput = myOut.toString();
+        final String standardError  = myErr.toString();
+        assertEquals("You used 'System.out' in your assignment, This is not allowed.",true, standardOutput.length() == 0);
+        assertEquals("You used 'System.err' in your assignment, This is not allowed.",true, standardError.length() == 0);
+        System.err.flush();
+        System.out.flush();
+        System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+        System.setErr(new PrintStream(new FileOutputStream(FileDescriptor.err)));
     }
 
     @Rubric(
@@ -148,7 +187,7 @@ public class LogicUnitTests {
     public void test_SetSpaces() {
         Office caterpillar = new Office(200, 400, 560, 600, "Caterpillar");
         updateExpectedTotalOffices();
-        caterpillar.setmParkingSpaces(100);
+        caterpillar.setParkingSpaces(100);
         assertEquals(100, caterpillar.getParkingSpaces());
     }
 
@@ -180,7 +219,7 @@ public class LogicUnitTests {
     @Test(timeout=TIMEOUT)
     public void testHouseOwner() {
         House washington = new House(20, 40, 56, 60);
-        washington.setmOwner("George Washington");
+        washington.setOwner("George Washington");
         assertEquals("George Washington", washington.getOwner());
     }
 

@@ -3,7 +3,10 @@ package mooc.vandy.java4android.buildings.logic;
 /**
  * This is the office class file, it is a subclass of Building.
  */
-public class Office extends Building {
+public class Office 
+       extends Building {
+       
+    // TODO - Put your code here.
 
        private String mBusinessName;
        private int mParkingSpaces = 0;
@@ -43,7 +46,7 @@ public class Office extends Building {
               return getmParkingSpaces();
        }
 
-       public void setmParkingSpaces(int parkingSpaces) {
+       public void setParkingSpaces(int parkingSpaces) {
               this.mParkingSpaces = parkingSpaces;
        }
 
@@ -69,12 +72,12 @@ public class Office extends Building {
         * Two office buildings are equal if their building
         * area and number of parking spaces is equal.
         *
-        * @param building the object being compared
+        * @param office the object being compared
         * @return true if criteria are met
         */
-       public boolean equals(Building building) {
-              if (building.calcBuildingArea() == calcBuildingArea() &&
-                      building.getParkingSpaces() == getmParkingSpaces()) {
+       public boolean equals(Office office) {
+              if (office.calcBuildingArea() == calcBuildingArea() &&
+                      office.getParkingSpaces() == getmParkingSpaces()) {
                      return true;
               }
               return false;

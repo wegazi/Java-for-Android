@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/bill/Documents/Coursera/Android/JavaForAndroid/m7-assignment-buildings-skeleton/app/build/intermediates/res/merged/debug/values-w820dp-v13/values-w820dp-v13.xml",
+        "outputFile": "/Users/bill/Downloads/_62aad97bbb5d039d71e28be6eccd1667_m7-assignment-buildings-skeleton/app/build/intermediates/res/merged/debug/values-w820dp-v13/values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "/Users/bill/Documents/Coursera/Android/JavaForAndroid/m7-assignment-buildings-skeleton/app/src/main/res/values-w820dp/dimens.xml",
+                    "file": "/Users/bill/Downloads/_62aad97bbb5d039d71e28be6eccd1667_m7-assignment-buildings-skeleton/app/src/main/res/values-w820dp/dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
